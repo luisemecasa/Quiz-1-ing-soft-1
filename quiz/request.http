@@ -1,0 +1,53 @@
+###
+POST http://localhost:3400/api/v1/person/new-person  HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "LUIS ",
+    "last_name": "CANON",
+    "address": [{
+        "zip_code": "170004",
+        "city": "MANIZALES",
+        "municipality": "PALERMO",
+        "country": "COLOMBIA"
+    }],
+    "pets": [
+        "Perro"
+    ],
+    "work" : [{
+        "id_work" : "1",
+        "job" : "PILOTO",
+        "company": [{
+            "id_company" : "1",
+            "company_name" : "AVIANCA"
+
+        }]
+    }]
+}
+
+###
+GET http://localhost:3400/api/v1/person/  HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3400/api/v1/person/651b2db944a4fbb57cea3a55  HTTP/1.1
+Content-Type: application/json
+
+###
+PATCH  http://localhost:3400/api/v1/person/651b2db944a4fbb57cea3a55  HTTP/1.1
+Content-Type: application/json
+
+{
+    "address": [{
+        "city": "ANSERMA"
+    }]
+}
+
+
+###
+DELETE http://localhost:3400/api/v1/person/651b24266f6179d61af3a431  HTTP/1.1
+Content-Type: application/json
+
+
+
+
