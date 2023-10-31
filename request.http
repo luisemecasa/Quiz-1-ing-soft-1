@@ -1,46 +1,130 @@
 ###
-POST http://localhost:3400/api/v1/workers/new-worker  HTTP/1.1
+POST http://localhost:3400/api/v1/users/new-user HTTP/1.1
 Content-Type: application/json
 
 {
-    "first_name": "JULIO ",
-    "last_name": "CANON",
-    "work" : [{
-        "id_work" : "1",
-        "name_work" : "PILOTO"
-    }],
-    "type_document" : "cedula",
-    "document_number" : "1054521362"    
+    "firstname": "vfdfd",
+    "lastname": "fbdbnf",
+    "email": "hsas@dzxdvd.com",
+    "phone": "315577fd580",
+    "password": "fdgdhdgd"
 }
 
 ###
-GET http://localhost:3400/api/v1/workers/  HTTP/1.1
-Content-Type: application/json
+GET http://localhost:3400/api/v1/users HTTP/1.1
 
 ###
-GET http://localhost:3400/api/v1/workers/651b23796f6179d61af3a424  HTTP/1.1
-Content-Type: application/json
+GET http://localhost:3100/api/v1/users/6511f0cb17213cee378110c2 HTTP/1.1
 
 ###
-PUT http://localhost:3400/api/v1/workers/651b23796f6179d61af3a424  HTTP/1.1
+PATCH http://localhost:3100/api/v1/users/6515d4084e338c7954999430 HTTP/1.1
 Content-Type: application/json
 
 {
-    "first_name": "LUIS ",
-    "last_name": "CANON",
-    "work" : [{
-        "id_work" : "1",
-        "name_work" : "PANADERO"
-    }],
-    "type_document" : "cedula",
-    "document_number" : "1056121362"    
+    "firstname":"Test2",
+    "lastname": "Test2 Lastname"
+}
+
+###
+PATCH http://localhost:3100/api/v1/users/6515d4084e338c7954999430 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname":"Test2 put"
+}
+
+###
+PUT http://localhost:3100/api/v1/users/6515d4084e338c7954999430 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname":"Test2 put"
+}
+
+###
+DELETE http://localhost:3100/api/v1/users/6511f0cb17213cee378110c2 HTTP/1.1
+
+
+
+###
+POST http://localhost:3100/api/v1/services/new-service HTTP/1.1
+Content-Type: application/json
+
+{
+    "serviceName": "Service 1.1",
+    "serviceDescription": "Descripción del servicio 1.1."
 }
 
 
 ###
-DELETE http://localhost:3400/api/v1/workers/651b224a6f6179d61af3a411  HTTP/1.1
+GET http://localhost:3100/api/v1/services HTTP/1.1
+###
+GET http://localhost:3100/api/v1/services/id HTTP/1.1
+###
+PATCH http://localhost:3100/api/v1/services HTTP/1.1
+###
+DELETE http://localhost:3100/api/v1/services HTTP/1.1
+
+
+
+
+###
+POST http://localhost:3400/api/v1/auth/signin HTTP/1.1
+Content-Type:application/json
+
+{
+    "firstname": "First",
+    "lastname": "Last",
+    "email": "email@example.com",
+    "current_password": "password123"
+}
+
+
+###
+POST http://localhost:3400/api/v1/auth/login HTTP/1.1
+Content-Type:application/json
+
+{
+    "email": "email@example.com",
+    "current_password": "password123"
+}
+
+###
+POST http://localhost:3400/api/v1/concesionaria/new-concesionario HTTP/1.1
+Content-Type:application/json
+
+{
+    "nombre": "MANIZALES AUTOS",
+    "direccion": "CRA 23 #53-68",
+    "vehiculos": []
+}
+
+
+### 
+GET http://localhost:3400/api/v1/concesionaria/ HTTP/1.1
+
+###
+GET http://localhost:3400/api/v1/concesionaria/653b3bc755a026a486eb9a32
+
+
+###
+POST http://localhost:3400/api/v1/vehiculos/new-vehiculo/653b3bc755a026a486eb9a32 HTTP/1.1
 Content-Type: application/json
 
+{
+    "marca": "Audi",
+    "modelo": "2023",
+    "referencia": "Q5",
+    "color": "Plata",
+    "cilindraje": "3000T",
+    "disponible": true,
+    "estado": "NUEVO"
+}
 
+###
+GET http://localhost:3400/api/v1/vehiculos/get-vehiculos/653b3bc755a026a486eb9a32 HTTP/1.1
+
+###
+GET http://localhost:3400/api/v1/vehiculos/get-marca/653b3bc755a026a486eb9a32/Audi HTTP/1.1
 
 
